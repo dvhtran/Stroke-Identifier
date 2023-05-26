@@ -35,8 +35,8 @@ Make sure you have installed all of the following prerequisites on your developm
 
 1. Clone this repo and save it in your local directory, to clone with URL run the following code in terminal
   
-     `git clone https://github.com/yeyanwang/stroke_classifier.git`
-  
+git clone : https://github.com/dvhtran/Stroke-Identifier.git
+
 2. Start Flask app by running the following code in terminal
 
      `python app.py`
