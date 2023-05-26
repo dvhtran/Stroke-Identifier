@@ -1,129 +1,69 @@
-# Stroke Prediction Machine Learning Model
+**Stroke Prediction Machine Learning Model
 
-## Project Description
+**Project Description
 
-Stroke is a serious medical condition that occurs when the blood supply to part of the brain is interrupted or reduced, leading to brain damage and potential long-term disability or death. The risk of stroke is affected by a wide range of factors, including age, gender, hypertension, heart disease, obesity, and smoking. 
+Stroke is a serious medical condition that requires early detection for timely medical intervention and optimal patient outcomes. This project aims to create a machine learning model for early stroke detection, focusing on various causative factors. The model assists clinical teams in predicting or assessing the risk of stroke occurrence, enabling timely medical intervention, minimizing brain damage, preventing long-term disabilities, identifying underlying causes, and facilitating quick medical decision-making.
 
-Detecting a stroke in its early stages brings numerous advantages, including timely medical intervention, reduced brain damage, prevention of long-term disabilities, identification of underlying causes, and the facilitation of swift medical decision-making to optimize patient outcomes.
+**Data Overview
 
-For this project, our objective is to create a machine learning model for early stroke detection, focusing on various causative factors. This model aims to assist clinical teams in predicting or assessing the risk of stroke occurrence, enabling timely medical intervention, minimizing brain damage, preventing long-term disabilities, identifying underlying causes, and facilitating quick medical decision-making to optimize patient outcomes.
+The stroke dataset comprises patients' medical records, including demographics, medical history, lifestyle factors, and the presence or absence of a stroke. It provides a comprehensive set of information for analysis and prediction.
 
-##  Data Overview
+**Built With
 
-The [stroke dataset](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset?select=healthcare-dataset-stroke-data.csv) comprises a compilation of patients' medical records. It encompasses a wide range of information, including patient demographics, medical history, lifestyle factors, and the presence or absence of a stroke for each patient.
+Python and Packages (e.g., scikit-learn, matplotlib, seaborn, pickle)
+Flask
+HTML
+CSS
+Getting Started
+Prerequisites
+Make sure you have the following prerequisites installed on your development machine:
 
-Here is a snippet of the dataset: 
-![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/7502f72d-72be-43a2-8c5c-eb2c1668f1df)
+**Git**
 
-## Built With 
-- Python and Packages (eg. scikit-learn, matplotlib, searborn, pickle, etc.)
-- Flask
-- HTML
-- CSS
+Python and set up your virtual environment
+Install Flask globally using the command: pip install flask
+Your favorite code editor (e.g., VScode)
+Your favorite browser (e.g., Google Chrome)
+Installation
+Clone this repository and save it in your local directory. Run the following command in the terminal:
+bash
+Copy code
+git clone https://github.com/dvhtran/Stroke-Identifier.git
+Start the Flask app by running the following command in the terminal:
+Copy code
+python app.py
+Visit localhost:5000 in your browser and enjoy!
+Machine Learning Pipeline
+Data Collection
+The dataset used for this project was collected from Kaggle.
 
-## Getting Started 
-**Prerequisites**
+**Model Selection
 
-Make sure you have installed all of the following prerequisites on your development machine:
-- Git
-- Python and set up your virtual environment
-- `pip install flask` globally
-- Your favoriate code editor (e.g. VScode, etc.)
-- Your favoriate browser (e.g. Google Chrome, etc.)
+The Random Forest Classifier was chosen for this problem due to its high accuracy in classification tasks. It is a popular choice in the healthcare and medical industry, where precise and reliable predictions are crucial.
 
-**Installation**
+**Exploratory Data Analysis (EDA)
 
-1. Clone this repo and save it in your local directory, to clone with URL run the following code in terminal
-  
-git clone : https://github.com/dvhtran/Stroke-Identifier.git
+Several interesting observations were made during the EDA phase, including data distribution analysis, examination of the target variable, handling missing values, and addressing data imbalances.
 
-2. Start Flask app by running the following code in terminal
+**Data Preprocessing
 
-     `python app.py`
-  
-3. Visit [localhost: 5000](http://localhost:5000/) in your browser and enjoy!
+The data was cleaned and prepared for analysis. This involved handling missing values, encoding categorical variables, applying feature scaling, and dividing the data into training and testing sets.
 
-## Machine Learning Pipline
-1. **Data Collection** 
-   
-   Data was collected from [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset)
-   
-2. **Model Selection** 
+**Model Training
 
-   The **Random Forest Classifier** was selected for this problem due to its reputation for achieving high accuracy in classification tasks. 
-   It is a popular choice in the healthcare and medical industry, where precise and reliable predictions are crucial.
-   
-3. **Exploratory Data Analysis (EDA)** 
+Three models were trained using different resampling methods to handle imbalanced data.
 
-   The below snippets are some interesting observations we discovered: 
-   - **Data Distribution with Histogram Analysis**
-   
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/efacd65c-d4c2-4060-a508-e7ef2be771f8)
-     
-   - **Closer Examination on Target Variable** 
-   
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/7ed0adda-b624-4699-8546-021602894d69)
-     
-   - **Missing Values on 'bmi' column**
-   
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/6e6ad77a-8086-4b70-8910-a92c0a0cfef7)
-     
-     **Filled in Missing Values with Imputed values**
-     
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/65da8d6e-f563-4fcb-a8f9-7763ea5aa9fc)
-     
-   - **Singleton Record on 'gender' column**
-   
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/8ed61800-b292-4080-b882-2d37240c243f)
-     
-     **Dropped Singleton Record**
-     
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/51b3de32-cf32-4cb5-8519-cd5c8c2c82fc)
-     
-   - **Uneven Distribution 'bmi' values**
-    
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/dda914f3-391f-4bcf-92c8-1c239ee1e157)
-     
-     **Binning 'bmi' values** ([Model 3](https://github.com/yeyanwang/stroke_classifier/blob/main/stroke_classifier_optimization_1.ipynb) only)
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/742d74c4-c14c-4a72-a78b-a154d0092eeb)
-     
-     ![image](https://github.com/yeyanwang/stroke_classifier/assets/120543690/cca8c744-b3fc-4fe6-98ae-20da5b87f464)
-     
-4. **Data Preprocessing** 
+**Evaluation
 
-   Data was cleaned and prepared for further analysis. This includes: 
-   - Applied oversampling methods to handle imbalanced data
-   - Apllied encoding to categorical varibales
-   - Applied feature scaling to transform numerical features into a consistent range
-   - Divided data into training and testing sets using `train_test_split` module
-5. **Modeling Training**
+The performance of the models was assessed using accuracy scores, confusion matrices, and classification reports. The selected model, Model 1, demonstrated superior performance overall.
 
-   Trained 3 models using different resampling methods  
-   - **Model 1** used oversampled data with the `RandomOverSampler` technique
-   - **Model 2** used oversampled data with the `SMOTE` technique
-   - **Model 3** used oversampled data with `RandomOverSampler` and applied additional binning to the 'bmi' column
+**Model Deployment with Flask
 
-6. **Evaluation**
-   - Utilized accuracy scores, confusion matrix and classification reports to compare to access the performance of all 3 models
-   - We ultimately selected **model 1** as the final model due to its overall superior performance. 
-   
-   Despite having a false positive rate of 1.82%, it is more advantageous in the context of predicting stroke occurrence to falsely identify patients as likely to have a stroke. This allows clinicians to allocate more attention and care to these patients. Conversely, a high false negative rate would be concerning, where patients who have a risk of stroke will not be intervened. In other words, it is preferable to mistakenly identify patients who are likely to have a stroke, rather than missing such cases. 
-   
-   See more detail about our [final model](https://github.com/yeyanwang/stroke_classifier/blob/main/stroke_classifier_final%20.ipynb)
-7. **Model Deployment with Flask**
-   - Implemented the model logic in our home route to handle incoming requests
-   - Created Web-based UI with HTML and CSS
-   
-   Check out the snippets below:
-   - **Landing Page:**
-   
-   ![Landing Page](https://github.com/yeyanwang/stroke_classifier/assets/120543690/93037122-c541-4cb0-9307-6937aa6f0252)
-   
-   - **Result Page**
-   
-   ![Result Page](https://github.com/yeyanwang/stroke_classifier/assets/120543690/1bd99269-90c2-49fe-b023-9f398b486b18)
+The model was implemented in the Flask application to handle incoming requests. A web-based UI was created using HTML and CSS to provide an interactive experience for users.
 
-## Credits 
-- [Kevin Lee](https://github.com/kevinclee26)
-- [Kaggle](https://www.kaggle.com/datasets/fedesoriano/stroke-prediction-dataset?select=healthcare-dataset-stroke-data.csv)
-- UC Berkely Extension Data Analytics Bootcamp
+Credits
+Kevin Lee
+Kaggle
+UC Berkeley Extension Data Analytics Bootcamp
+
+
